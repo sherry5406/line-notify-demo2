@@ -2,6 +2,9 @@
   "name": "line-notify-demo",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "20.14.0"
+  },
   "scripts": {
     "build": "npm install && node index.js",
     "start": "node index.js",
