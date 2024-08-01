@@ -7,7 +7,10 @@ require('dotenv').config();
 
 const LINE_NOTIFY_TOKEN = process.env.LINE_NOTIFY_TOKEN;
 const PORT = process.env.PORT || 3000;
-
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    // 适当的处理，可能的话优雅地关闭应用
+});
 function sendLineNotify(message) {
     axios.post('https://notify-api.line.me/api/notify',
         `message=${message}`,
